@@ -21,7 +21,13 @@ public class Rodriguez_Eric_Clases {
             System.out.println("No es el formato de fecha correcto.");
             return;
         }
-        String diadelasemana = partes
+        //Trim: elimina los espacios en blanco
+        String diadelasemana = partes[0].trim().toLowerCase();
+        String [] diames = partes[1].split("/");
+        
+        if(diames.length != 2){
+            System.out.println("Formato incorrecto, intende de nuevi");
+        }
     }
     
 }
