@@ -14,7 +14,7 @@ public class Rodriguez_Eric_Clases {
     public static void main(String[] args) {
         Scanner sc = new Scanner (System.in);
         System.out.println("Ingrese la fecha en formato DD/MM: ");
-        String fechactual = sc.nextLine().toLowerCase();
+        String fechactual = sc.nextLine();
         
         String[] partes = fechactual.split(", ");
         if (partes.length != 2) {
