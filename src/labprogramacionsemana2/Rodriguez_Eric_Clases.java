@@ -59,7 +59,7 @@ public class Rodriguez_Eric_Clases {
             System.out.println("Martes, Hubo examen?");
             System.out.println("1. Si");
             System.out.println("2. No");
-             int respuestaexamen = sc.nextInt().toLowerCase();
+             String respuestaexamen = sc.next().toLowerCase();
             if (respuestaexamen.equals("1")) {
                 System.out.println("Ingrese los alumnos aprobados");
                 int aprobaron = sc.nextInt();
@@ -67,53 +67,53 @@ public class Rodriguez_Eric_Clases {
                 int desaprobados = sc.nextInt();
                 if (aprobaron + desaprobados > 0) {
                     double porcentaje = (double) aprobaron / (aprobaron + desaprobados) * 100;
-                    System.out.println("El porcentaje de alumnos que aprobaron es: " + porcentaje + "%");
+                    System.out.println("Alumnos Aprobados: " + porcentaje + "%");
                 } else {
-                    System.out.println("No hubo alumnos en el examen.");
+                    System.out.println("Sin alumnos disponibles");
                 }
             }
         } else if (diadelasemana.equals("Miercoles") || diadelasemana.equals("miercoles")) {
             System.out.println("Miercoles. ¿Hubo examen?");
             System.out.println("1. Si");
             System.out.println("2. No");
-            int respuestaexamen = sc.nextInt().toLowerCase();
+            String respuestaexamen = sc.next().toLowerCase();
             if (respuestaexamen.equals("1")) {
-                System.out.println("¿Cuántos alumnos aprobaron?");
+                System.out.println("Ingrese alumnos aprobados: ");
                 int aprobaron = sc.nextInt();
-                System.out.println("¿Cuántos alumnos no aprobaron?");
+                System.out.println("Ingresos alumnos desaprobados: ");
                 int noAprobaron = sc.nextInt();
                 if (aprobaron + noAprobaron > 0) {
                     double porcentaje = (double) aprobaron / (aprobaron + noAprobaron) * 100;
-                    System.out.println("El porcentaje de alumnos que aprobaron es: " + porcentaje + "%");
+                    System.out.println("Alumnos aprobados: " + porcentaje + "%");
                 } else {
-                    System.out.println("No hubo alumnos en el examen.");
+                    System.out.println("Sin alumnos disponibles");
                 }
             }
-        } else if (diaDeLaSemana.equals("jueves")) {
-            System.out.println("Hoy es jueves (práctica hablada). ¿Qué porcentaje de alumnos asistió a clase?");
-            double porcentajeAsistencia = entrada.nextDouble();
+        } else if (diadelasemana.equals("jueves")) {
+            System.out.println("Jueves. ¿Cuantos asistieron al examen?");
+            double porcentajeAsistencia = sc.nextDouble();
             if (porcentajeAsistencia > 50) {
-                System.out.println("Asistió la mayoría.");
+                System.out.println("Asistio la mayoria");
             } else {
-                System.out.println("No asistió la mayoría.");
+                System.out.println("No asistio la mayoria.");
             }
-        } else if (diaDeLaSemana.equals("viernes")) {
-            System.out.println("Hoy es viernes (inglés para viajeros).");
+        } else if (diadelasemana.equals("viernes")) {
+            System.out.println("Hoy es viernes.");
             if ((dia == 1 && mes == 1) || (dia == 1 && mes == 7)) {
-                System.out.println("¡Comienzo de nuevo ciclo!");
-                System.out.println("¿Cuántos alumnos hay en el nuevo ciclo?");
-                int cantidadAlumnos = entrada.nextInt();
-                System.out.println("¿Cuánto paga cada alumno?");
-                double precioAlumno = entrada.nextDouble();
-                double totalIngresos = cantidadAlumnos * precioAlumno;
-                System.out.println("El ingreso total es de: $" + totalIngresos);
+                 
+                System.out.println("¿Cuantos alumnos hay en el nuevo ciclo?");
+                int cantidadalumnos = sc.nextInt();
+                System.out.println("¿Cuanto paga cada alumno?");
+                double precioalumno = sc.nextDouble();
+                double totalingresos = cantidadalumnos * precioalumno;
+                System.out.println("El ingreso total es de: $" + totalingresos);
             }
         } else {
-            System.out.println("¡Ups! Ese día de la semana no es válido.");
+            System.out.println("Ese dia no es valido");
         }
     }
         
         
     }
     
-}
+
