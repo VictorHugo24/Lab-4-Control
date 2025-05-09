@@ -5,7 +5,7 @@
 package labprogramacionsemana3;
 import java.util.Scanner;
 import java.util.Random;
-        
+
 /**
  *
  * @author Eric Rodriguez
@@ -16,7 +16,7 @@ public class Rodriguez_Eric_Estructura {
         Random random = new Random();
         int opcion;
         int numero;
-        boolean primo = true; 
+        boolean primo = true;
         int numperfecto = 0;
         String palabralarga = "";
         int contador1=0;
@@ -24,7 +24,7 @@ public class Rodriguez_Eric_Estructura {
         int contador3=0;
         int contador4=0;
         do{
-            
+
             System.out.println("*******MENU*********");
             System.out.println("1. Palabras Alreves");
             System.out.println("2. Numero Perfecto");
@@ -32,26 +32,26 @@ public class Rodriguez_Eric_Estructura {
             System.out.println("4. Votaciones");
             System.out.println("5. Salir");
             System.out.println("Favor ingrese su eleccion: ");
-        
+
             opcion = sc.nextInt();
-        
+
             switch (opcion){
                 case 1:
                     contador1++;
                     System.out.println("Ingrese la cantidad de palabras que va a ingresar");
-                    int cantidadpalabras = sc.nextInt(); 
+                    int cantidadpalabras = sc.nextInt();
                     for (int i = 0; i <= cantidadpalabras; i++) {
-                    System.out.print("Ingrese la palabra : ");
-                    String palabra = sc.nextLine();
-                     
-        
-                    System.out.println("Su palabra al reves es: " + new StringBuilder(palabra).reverse().toString());
-                    
-                    
-                     if (palabra.length() > palabralarga.length()) {
-                palabralarga = palabra;
-                        System.out.println("Su palabra mas larga es: "+palabralarga);
-            }       
+                        System.out.print("Ingrese la palabra : ");
+                        String palabra = sc.nextLine();
+
+
+                        System.out.println("Su palabra al reves es: " + new StringBuilder(palabra).reverse().toString());
+
+
+                        if (palabra.length() > palabralarga.length()) {
+                            palabralarga = palabra;
+                            System.out.println("Su palabra mas larga es: "+palabralarga);
+                        }
                     }
                     break;
                 case 2:
@@ -64,48 +64,51 @@ public class Rodriguez_Eric_Estructura {
                         for (int i = 1; i < numero; i++) {
                             if (numero % i == 0){
                                 numperfecto += i;
-                               
-                            
+
+
+                            }
                         }
-                    }
                         if (numperfecto == numero) {
                             System.out.println("Su numero es perfecto");
                         } else {
                             System.out.println("Su numero no es perfecto");
-                        } 
+                        }
                     }
-                    
-              case 3: 
+                    break;
+                case 3:
                     contador3++;
                     int numrandom = random.nextInt(100) +1;
+                    System.out.println("Su numero es" + numrandom);
+                    
                     int cd =0;
                     String lista = "";
                     if (numrandom <= 1){
-                       primo = false;
+                        primo = false;
                     } else {
                         for (int i = 2; i < numrandom; i++) {
                             if(numrandom % i == 0){
                                 cd++;
-                                
+
                                 if( i < numrandom){
-                                lista += ", ";    
+                                    lista += ", ";
                                 }
-                                 if (i > 1 && i < numrandom) {
-                        primo = false;
-                                primo = false;
-                                break;
-                                
+                                if (i > 1 && i < numrandom) {
+                                    
+                                    primo = false;
+                                   
+                                }
+
                             }
-                            
                         }
                         if (primo && numrandom > 1) {
-            System.out.println("Su numero es primo");
-        } else {
-            System.out.println("Su numero no es primo");
-        }
-             case 4: 
-             contador4++;
-                  int votantes;
+                            System.out.println("Su numero es primo");
+                        } else {
+                            System.out.println("Su numero no es primo");
+                        }
+                    } break;
+                case 4:
+                    contador4++;
+                    int votantes;
                     System.out.print("Ingrese la cantidad de votantes: ");
                     votantes = sc.nextInt();
                     int votosazules = 0, votosrojos = 0, votosnegros = 0, votosamarillos = 0, votosnulos = 0;
@@ -147,19 +150,21 @@ public class Rodriguez_Eric_Estructura {
                     } else {
                         System.out.println("Votacion Fallida");
                     }
-              case 5:
-              System.out.println("******Resumen de la Ejecucion*******");
-              System.out.println("1. Palabras al reves: "+contador1+" veces");
-              System.out.println("2. Numero Perfecto : "+contador2+ " veces");
-              System.out.println("3. Primos : "+contador3+" veces");
-              System.out.println("4. Votaciones: "+contador4+ " veces");
-              sc.close();
-              break;
-              default:
-                  System.out.println("Opcion no valida, intente de nuevo ");
-                  break;
+                case 5:
+                    System.out.println("******Resumen de la Ejecucion*******");
+                    System.out.println("1. Palabras al reves: "+contador1+" veces");
+                    System.out.println("2. Numero Perfecto : "+contador2+ " veces");
+                    System.out.println("3. Primos : "+contador3+" veces");
+                    System.out.println("4. Votaciones: "+contador4+ " veces");
+                    System.exit(0);
+                    
+                    break;
+                default:
+                    System.out.println("Opcion no valida, intente de nuevo ");
+                    break;
             }
-            
-                    }while(opcion !=6);
-            }
+
+
+        }while(opcion !=6);
+    }
 }
