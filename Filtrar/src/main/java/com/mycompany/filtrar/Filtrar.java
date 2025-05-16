@@ -28,14 +28,14 @@ public class Filtrar {
         String palabra = "";
         System.out.println("Palabras con mayor longitud de " + cantidad + ":");
 
-        // Inicializar el contador para recorrer la frase
+        // Contador para recorrer la frase
         int cont = 0;
         
         // Ciclo que recorre la frase
         while (cont < frase.length()) {
-            char c = frase.charAt(cont); // Obtener el carácter actual
+            char c = frase.charAt(cont); // Obtener el caracter actual
 
-            // Si el caracter es un espacio, significa que hemos encontrado una palabra
+            // Si el caracter es un espacio significa que hemos encontrado una palabra
             if (c == ' ') {
                 if (palabra.length() >= cantidad) {  // Mayor o igual longitud
                     System.out.println(palabra); // Imprimir palabra si cumple con la longitud
